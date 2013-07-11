@@ -108,13 +108,20 @@ Q: REBOUND! closes immediately after starting it up.
      can cause this issue. If nothing works, a clean installation of Python and Pygame immediately after should work.
      
 Q: I can't install Python/Pygame to play REBOUND!
-  A: If you are on a 64-bit OS, try installing the 32-bit Python and Pygame.
-  Perhaps try the PyDev plugin for Eclipse (http://pydev.org/download.html) and running off of there.
-  An executable (.exe) will come in the near future.
-  If you still have issues feel free to contact me (contact info at end of README.txt)
+  A: Make sure you have administrator privileges to install Python and Pygame.
+     If you are on a 64-bit OS, try installing the 32-bit Python and Pygame.
+     Perhaps try the PyDev plugin for Eclipse (http://pydev.org/download.html).
+     An executable (.exe) will come in the near future.
+     If you still have issues feel free to contact me (contact info at end of README.txt)
+
+Q: Where can I go to learn more about Pygame?
+   A: Pygame modules are great for making small 2D games.
+      Visit http://www.pygame.org/ for documentation, downloads, and community submitted games to learn off of!
+      This Pygame Cheat Sheet is also quite helpful in understanding the flow of Pygame: 
+      http://inventwithpython.com/blog/2011/10/07/pygame-cheat-sheet/
   
 Q: Who's the guy on the bottom right in the instructions?
-  A: Lawrence Angrave, an awesome Computer Science professor at UIUC. Press 'A' in the instructions screen to hear him!
+  A: Lawrence Angrave, an awesome Computer Science professor at UIUC. Press 'A' in the instructions screen!
 
 ---------------------------------------------------------------------------------
 
