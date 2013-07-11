@@ -1,11 +1,11 @@
 #####   ---   #####
-REBOUND v1.0.0
-William Xie
+   REBOUND v1.0.0
+    William Xie
 http://xiewilliam.com
 #####   ---   #####
 ---------------------------------------------------------------------------------
 
-** DESCRIPTION --
+## ** DESCRIPTION --
 
 Short Gameplay:
 http://www.youtube.com/watch?v=3QREB9IyM2w
@@ -19,7 +19,7 @@ You lose when your paddle shortens to nothing!
 
 ---------------------------------------------------------------------------------
 
-** INSTALLATION --
+## ** INSTALLATION --
 
 1) Download all files into a directory
 
@@ -34,7 +34,7 @@ LINK: http://www.pygame.org/download.shtml
 ---------------------------------------------------------------------------------
 
 
-** INSTRUCTIONS --
+## ** INSTRUCTIONS --
 
 Control the left and right paddles with your mouse!
 
@@ -54,14 +54,14 @@ You LOSE when your paddle shortens to nothing!
 
 ---------------------------------------------------------------------------------
 
-** CREDITS --
+## ** CREDITS --
 
 Created and Programmed by: 
   William Xie
 
 Programmed with:
   Python 2.7.3 
-  Pygame 1.9.1
+  Pygame 1.9
 
 Game SFX Created From:
   www.superflashbros.net/as3sfxr/
@@ -83,14 +83,21 @@ Special Thanks:
 
 v1.0.0:
   - hitting ball off top or bottom of paddle may be detected as multiple hits
+      ***SOLUTION: implementation issue of collision detection between balls and paddles. To be fixed.
   
   - powerup ball can spawn right under a normal ball making it hard to see and vice versa
+      ***SOLUTION: spawn algorithm issue missing a conditional statement to detect for this. To be fixed.
+  
+  - when switching paddles by moving the mouse, the previous paddle tends to move as well
+      ***SOLUTION: this is due to mouse movement from one paddle to another. In a future version a dead zone will
+                   be implemented to resolve this. There are also plans to make REBOUND! Leap Motion compatible.
   
   - sound and music do not play and instead a "clicking" sound is played
       ***SOLUTION: this is a known issue with sound modules in Pygame. Can be fixed by a few restarts and luck.
       
   - rebound sounds are delayed
-      ***SOLUTION: this is caused by delays in the sound modules in Pygame
+      ***SOLUTION: this is caused by delays in the default sound modules in Pygame. Looking into this, but delays 
+                   will still occur when playing.
       
 ---------------------------------------------------------------------------------
 
@@ -99,14 +106,25 @@ v1.0.0:
 Q: REBOUND! closes immediately after starting it up.
   A: Reinstall Pygame and check to see if there are any conflicts in the Python folder. Installing Py2Exe after Pygame
      can cause this issue. If nothing works, a clean installation of Python and Pygame immediately after should work.
-    
-Q: Collision is a little wonky.
-  A: This is due to how collision detection is implemented using Pygame for the paddles. See known bugs for issues.
+     
+Q: I can't install Python/Pygame to play REBOUND!
+  A: If you are on a 64-bit OS, try installing the 32-bit Python and Pygame.
+  Perhaps try the PyDev plugin for Eclipse (http://pydev.org/download.html) and running off of there.
+  An executable (.exe) will come in the near future.
+  If you still have issues feel free to contact me (contact info at end of README.txt)
   
 Q: Who's the guy on the bottom right in the instructions?
   A: Lawrence Angrave, an awesome Computer Science professor at UIUC. Press 'A' in the instructions screen to hear him!
 
+---------------------------------------------------------------------------------
 
+## ** CONTACT --
 
+Have a bug issue? Want to offer some suggestions to improve REBOUND? Feel like getting something off your chest?
+
+Let me know at http://xiewilliam.com/contact
+I'll be glad to hear from you!
+
+Thanks for playing!
 
 
