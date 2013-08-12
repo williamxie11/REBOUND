@@ -86,11 +86,11 @@ v1.0.0:
       ***SOLUTION: implementation issue of collision detection between balls and paddles. To be fixed.
   
   - powerup ball can spawn right under a normal ball making it hard to see and vice versa
-      ***SOLUTION: spawn algorithm issue missing a conditional statement to detect for this. To be fixed.
+      ***SOLUTION: spawn function missing a conditional statement to detect for this. To be fixed.
   
   - when switching paddles by moving the mouse, the previous paddle tends to move as well
       ***SOLUTION: this is due to mouse movement from one paddle to another. In a future version a dead zone will
-                   be implemented to resolve this. There are also plans to make REBOUND! Leap Motion compatible.
+                   can be implemented to resolve this.
   
   - sound and music do not play and instead a "clicking" sound is played
       ***SOLUTION: this is a known issue with sound modules in Pygame. Can be fixed by a few restarts and luck.
