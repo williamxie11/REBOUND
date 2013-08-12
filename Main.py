@@ -24,6 +24,7 @@ from pygame.locals import *
 # Methods #
 
 """
+# =========== Main Ball Move Function ========== #
 # Moves all the balls in the ball list by their corresponding dx, dy
 #   - collision detection with walls and paddle; calls split method if collision occurs
 #   - checks if ball is off the playing field 
@@ -32,7 +33,7 @@ from pygame.locals import *
 def move():
     global balls, maxBalls, length, pows
     
-    # Paddles!
+    # -- Draws Paddles! -- #
     leftPaddle = Paddle.Paddle(10, lmouseY, length)
     leftRect = pygame.Rect(leftPaddle.x, leftPaddle.y, 10, leftPaddle.length)
     leftPaddle.draw(background, (255, 255, 255), (0, 0, 0))
@@ -41,17 +42,20 @@ def move():
     rightRect = pygame.Rect(rightPaddle.x, rightPaddle.y, 10, rightPaddle.length)
     rightPaddle.draw(background, (255, 255, 255), (0, 0, 0))
     
-    # Add Ball!
+    # Adds ball to screen if total balls not at max number
     if (len(balls) < maxBalls):
         addBall(balls)
-
+        
+    # -- Ball Loop -- #
+    # Applies conditions to all ball objects in play #
     for b in balls:
+        # Move ball to next frame
         b.move()
         
-        # Ball!
+        # Draw ball into next frame
         b.draw(background)
         
-        # Collisions !
+        # Rudimentary collision check of upper and lower walls
         if (b.y <= 60):
             b.setdy(-b.dy)
             if (b.dx < 0):
@@ -60,9 +64,11 @@ def move():
                 b.setdx(b.dx+1)
         elif (b.y >= height - 60):
             b.setdy(-b.dy)
-
+        
+        # Creates a rectangle of ball for use in the "colliderect" module (collision detection)
         bRect = pygame.Rect(b.x - b.radius, b.y - b.radius, b.radius*2, b.radius*2)
-                
+        
+        # -- Left Collision Check -- #
         if (bRect.colliderect(leftRect)):
             if (b.color == (169, 32, 0)):
                 if (b.radius == 5):
@@ -76,7 +82,8 @@ def move():
             else:
                 hitPaddleSound.play()
                 split(b, "right")
-                
+        
+        # -- Right Collision Check -- #        
         if (bRect.colliderect(rightRect)):
             if (b.color == (169, 32, 0)):
                 if (b.radius == 5):
@@ -91,13 +98,14 @@ def move():
                 hitPaddleSound.play()
                 split(b, "left")
 
-        # Out of Bounds !
+        # -- Out of Bounds Check -- #
         if (b.x < -15 or b.x > width+15):
             shortSound.play()
             length -= b.radius
             balls.remove(b)
 
 """
+# =========== Max Balls Generator ===========
 # Takes in current maxBalls and current score
 # Calculates if can increase max and returns max amount
 """
@@ -110,6 +118,7 @@ def canAddMax(maxBalls, score):
     return newMaxBalls
 
 """
+# =========== Ball Add Function ===========
 # Takes in list of balls
 # Appends a ball with random coordinates and dx,dy to the balls list
 """
@@ -129,6 +138,7 @@ def addBall(ballsList):
     ballsList.append(ball)
 
 """
+# =========== Power Up Adder Function ===========
 # Takes in balls list and current level
 # Appends a powerUp ball with random coordinates and dx,dy to balls list
 """
@@ -153,7 +163,8 @@ def addPowerUp(ballsList, level):
     ballsList.append(ball)
     
 """
-# Calculates using random a size of ball and returns size
+# =========== Random Ball Size Generator ===========
+# Calculates using random num generator a size of ball and returns size
 """
 def getRandomSize():
     randInt = random.randint(0, 100)
@@ -170,9 +181,10 @@ def getRandomSize():
     return size
 
 """
-# Takes in a ball and the new direction
-# Increases score and creates split effect
-# Removes ball if ball size = 5
+# =========== Split Effect Function ===========
+# Takes in a ball and the new direction of the spawned balls
+# Increases score and creates split effect by spawning two new balls going in the opposite direection
+# Removes ball if ball size == 5 (so after the collision ball size == 0)
 """
 def split(ball, newDirection):
     global balls, b5, b10, b15, b20, b25, score, pows
@@ -193,7 +205,7 @@ def split(ball, newDirection):
         score += 50
         b5 += 1
 
-    # New Balls
+    # Removes balls out of play and creates the "splitting effect" of ball hitting paddle by spawning new balls
     if (ball.radius - 5 == 0):
         balls.remove(ball)
     else:
@@ -384,6 +396,9 @@ while True:
                 print "Credits!"
             """
             # Keyboard Controls
+            #### NOTE: Pygame has issues with keys being held down. 
+            ####       Better key controls could be implemented later.
+            
             if (event.key == K_w):
                 lmouseY -= 5
             if (event.key == K_s):
@@ -431,7 +446,7 @@ while True:
         pause = True
         menu.showStats(background, score, highBalls, maxBalls, b5, b10, b15, b20, b25, pows)
     
-            
+    
     pygame.display.update()
     frames.tick(100)
 
