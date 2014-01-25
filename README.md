@@ -8,9 +8,10 @@ REBOUND v1.0.0
 William Xie
 
 http://xiew.me
+
 ---------------------------------------------------------------------------------
 
-DESCRIPTION
+#DESCRIPTION
 
 Short Gameplay:
 http://www.youtube.com/watch?v=3QREB9IyM2w
@@ -24,7 +25,7 @@ You lose when your paddle shortens to nothing!
 
 ---------------------------------------------------------------------------------
 
-INSTALLATION
+#INSTALLATION
 
 1) Download all files into a directory
 
@@ -39,7 +40,7 @@ LINK: http://www.pygame.org/download.shtml
 ---------------------------------------------------------------------------------
 
 
-INSTRUCTIONS
+#INSTRUCTIONS
 
 Control the left and right paddles with your mouse!
 
@@ -59,7 +60,7 @@ You LOSE when your paddle shortens to nothing!
 
 ---------------------------------------------------------------------------------
 
-RESOURCES
+#RESOURCES
 
 Programmed with:
   Python 2.7.3 
