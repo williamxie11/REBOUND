@@ -1,15 +1,16 @@
 REBOUND!
 ===================
 
+A game for CS 125 honors
+
 REBOUND v1.0.0
 
 William Xie
 
-http://xiewilliam.com
-
+http://xiew.me
 ---------------------------------------------------------------------------------
 
-## ** DESCRIPTION --
+DESCRIPTION
 
 Short Gameplay:
 http://www.youtube.com/watch?v=3QREB9IyM2w
@@ -23,7 +24,7 @@ You lose when your paddle shortens to nothing!
 
 ---------------------------------------------------------------------------------
 
-## ** INSTALLATION --
+INSTALLATION
 
 1) Download all files into a directory
 
@@ -38,7 +39,7 @@ LINK: http://www.pygame.org/download.shtml
 ---------------------------------------------------------------------------------
 
 
-## ** INSTRUCTIONS --
+INSTRUCTIONS
 
 Control the left and right paddles with your mouse!
 
@@ -58,10 +59,7 @@ You LOSE when your paddle shortens to nothing!
 
 ---------------------------------------------------------------------------------
 
-## ** CREDITS --
-
-Created and Programmed by: 
-  William Xie
+RESOURCES
 
 Programmed with:
   Python 2.7.3 
@@ -75,69 +73,7 @@ Fonts:
   
 Music:
   http://www.youtube.com/watch?v=CT8t_1JXWn8
-  
-Special Thanks:
-  The Xie Family
-  Lawrence Angrave
-  and the UIUC Computer Science Department
 
 ---------------------------------------------------------------------------------
 
-## ** KNOWN BUGS --
 
-v1.0.0:
-  - hitting ball off top or bottom of paddle may be detected as multiple hits
-      ***SOLUTION: implementation issue of collision detection between balls and paddles. To be fixed.
-  
-  - powerup ball can spawn right under a normal ball making it hard to see and vice versa
-      ***SOLUTION: spawn function missing a conditional statement to detect for this. To be fixed.
-  
-  - when switching paddles by moving the mouse, the previous paddle tends to move as well
-      ***SOLUTION: this is due to mouse movement from one paddle to another. In a future version a dead zone will
-                   can be implemented to resolve this.
-  
-  - sound and music do not play and instead a "clicking" sound is played
-      ***SOLUTION: this is a known issue with sound modules in Pygame. Can be fixed by a few restarts and luck.
-      
-  - rebound sounds are delayed
-      ***SOLUTION: this is caused by delays in the default sound modules in Pygame. Looking into this, but delays 
-                   will still occur when playing.
-      
----------------------------------------------------------------------------------
-
-## ** TROUBLESHOOTING/FAQ --
-
-Q: REBOUND! closes immediately after starting it up.
-
-A: Reinstall Pygame and check to see if there are any conflicts in the Python folder. Installing Py2Exe after Pygame
-     can cause this issue. If nothing works, a clean installation of Python and Pygame immediately after should work.
-     
-Q: I can't install Python/Pygame to play REBOUND!
-
-A: Make sure you have administrator privileges to install Python and Pygame.
-     If you are on a 64-bit OS, try installing the 32-bit Python and Pygame.
-     Perhaps try the PyDev plugin for Eclipse (http://pydev.org/download.html).
-     An executable (.exe) will come in the near future.
-     If you still have issues feel free to contact me (contact info at end of README.txt)
-
-Q: Where can I go to learn more about Pygame?
-  
-A: Pygame modules are great for making small 2D games.
-      Visit http://www.pygame.org/ for documentation, downloads, and community submitted games to learn off of!
-      This Pygame Cheat Sheet is also quite helpful in understanding the flow of Pygame: 
-      http://inventwithpython.com/blog/2011/10/07/pygame-cheat-sheet/
-  
-Q: Who's the guy on the bottom right in the instructions?
-
-A: Lawrence Angrave, an awesome Computer Science professor at UIUC. Press 'A' in the instructions screen!
-
----------------------------------------------------------------------------------
-
-## ** CONTACT --
-
-Have a bug issue? Want to offer some suggestions to improve REBOUND? Feel like getting something off your chest?
-
-Let me know at http://xiewilliam.com/contact
-I'll be glad to hear from you!
-
-Thanks for playing!
